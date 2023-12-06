@@ -1,0 +1,100 @@
+﻿@page "/query"
+
+<PageTitle>Query - StarTED</PageTitle>
+<h3 class="fw-bold">Clubs by Status</h3>
+
+<fieldset class="mb-1">
+    <legend class="visually-hidden">Select Club Status</legend>
+    <div class="row col-8 g-3 align-items-center mb-3">
+        <label for="clubStatus" class="col-2 col-form-label">Select Club Status</label>
+        <div class="col-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="filterRadio" id="activeRadio" @onclick="() => FilterData(true)">
+                <label class="form-check-label" for="activeRadio">Active</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="filterRadio" id="inactiveRadio" @onclick="() => FilterData(false)">
+                <label class="form-check-label" for="inactiveRadio">In-Active</label>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" @onclick="HandleSearch">Search</button>
+</fieldset>
+
+@if (!string.IsNullOrWhiteSpace(FeedbackMessage))
+{
+    <div class="alert alert-info">
+        @FeedbackMessage
+    </div>
+}
+
+@if (Errors.Count > 0)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in Errors)
+        {
+            <p class="m-0">@error.Value</p>
+        }
+    </div>
+}
+
+@if (Clubs != null && Clubs.Any() && Employees != null && Employees.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Staff</th>
+                <th>Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var pageSize = 5;
+                var totalPages = (int)Math.Ceiling((double)Clubs.Count / pageSize);
+                var currentPageClubs = Clubs.Skip((currentPage - 1) * pageSize).Take(pageSize);
+            }
+            @foreach (var club in currentPageClubs)
+            {
+                <tr>
+                    <td><a href="@($"CRUD/{club.ClubId}")">Edit</a></td>
+                    <td>@club.ClubId</td>
+                    <td>@club.ClubName</td>
+                    <td>
+                        @if (club.Employee != null && !string.IsNullOrWhiteSpace(club.Employee.FirstName) && !string.IsNullOrWhiteSpace(club.Employee.LastName))
+                        {
+                            @($"{club.Employee.LastName}, {club.Employee.FirstName} ")
+                        }
+                        else
+                        {
+                            <span style="color: grey;">No staff member</span>
+                        }
+                    </td>
+                    <td>@club.Fee</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+else
+{
+    <p>No data available.</p>
+}
+
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+        <button type="button" class="btn btn-clear" @onclick="() => ChangePage(1)">&lt;First&gt;</button>
+        <button type="button" class="btn btn-clear" @onclick="() => ChangePage(currentPage - 1)">&lt;Prev&gt;</button>
+
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            <button type="button" class="btn btn-blue" @onclick="() => ChangePage(i)">@i</button>
+        }
+
+        <button type="button" class="btn btn-clear" @onclick="() => ChangePage(currentPage + 1)">&lt;Next&gt;</button>
+        <button type="button" class="btn btn-clear" @onclick="() => ChangePage(totalPages)">&lt;Last&gt;</button>
+    </div>
+</div>

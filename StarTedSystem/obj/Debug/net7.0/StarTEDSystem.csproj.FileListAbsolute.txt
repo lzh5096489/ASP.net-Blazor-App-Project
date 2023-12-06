@@ -1,0 +1,14 @@
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\bin\Debug\net7.0\StarTEDSystem.deps.json
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\bin\Debug\net7.0\StarTEDSystem.dll
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\bin\Debug\net7.0\StarTEDSystem.pdb
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.AssemblyInfoInputs.cache
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.AssemblyInfo.cs
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.csproj.CoreCompileInputs.cache
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.dll
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\refint\StarTEDSystem.dll
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.pdb
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\ref\StarTEDSystem.dll
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\bin\Debug\net7.0\StarTEDSystem.runtimeconfig.json
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.csproj.AssemblyReference.cache
+D:\nait-studies\CPSC1517\ProjectA\StarTEDSolution\StarTEDSystem\obj\Debug\net7.0\StarTEDSystem.genruntimeconfig.cache
